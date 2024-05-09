@@ -19,6 +19,9 @@ class StudentTest extends TestCase
         return $student;
     }
 
+    /**
+     * @covers Student::setWeight
+     */
     public function test_student_is_aproved()
     {
         $student = $this->getStudentMock();
@@ -35,6 +38,9 @@ class StudentTest extends TestCase
         }
     }
 
+    /**
+     * @covers Student::getGrades
+     */
     public function test_getGrades_should_return_list_of_grades()
     {
         $student = $this->getStudentMock();
@@ -42,6 +48,9 @@ class StudentTest extends TestCase
         $this->assertTrue(is_array($student->getGrades()));
     }
 
+    /**
+     * @covers Student::addGrade
+     */
     public function test_addGrade_should_add_grade_to_student()
     {
         $student = new Student;
@@ -50,6 +59,9 @@ class StudentTest extends TestCase
         $this->assertNotNull($student->getGrades());
     }
 
+    /**
+     * @covers Student::getGradesWithWeigth
+     */
     public function test_getGradesWithWeigth_should_return_list_of_grades_with_weigth()
     {
         $student = $this->getStudentMock();
@@ -57,6 +69,9 @@ class StudentTest extends TestCase
         $this->assertTrue(is_array($student->getGradesWithWeigth())); 
     }
 
+    /**
+     * @covers Student::getGradesWithoutWeigth
+     */
     public function test_getGradesWithoutWeigth_should_return_list_of_grades_without_weigth()
     {
         $student = $this->getStudentMock();
@@ -64,6 +79,9 @@ class StudentTest extends TestCase
         $this->assertTrue(is_array($student->getGradesWithoutWeigth())); 
     }
 
+    /**
+     * @covers Student::calculateGradesWithWeight
+     */
     public function test_calculateGradesWithWeight_should_return_list_of_calculated_grades()
     {
         $student = $this->getStudentMock();
